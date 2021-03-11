@@ -31,8 +31,13 @@ while (not(quit)):
         print('Your pet is VERY hungry')
     elif hunger > 50:
         print('Your pet is hungry')
-    
- 
+
+    if happiness == 0:
+        print('You shouldn\'t have gotten a pet if you were never going to make sure it\'s happy. To increase happiness, feed or pet!')
+    elif happiness < 20:
+        print('Your pet is getting pretty unhappy.')
+    elif happiness > 80 and hunger < 20:
+        print('You\'re doing a pretty good job being a pet parent')
 
     # User input for interactions
     answer = input("What do you want to do? Your options are 'play', 'feed', 'pet', 'quit'. ")
@@ -48,13 +53,22 @@ while (not(quit)):
         quit = True
     if answer == 'feed':
         hunger = hunger - 20
+        
         print("hunger level: ", hunger)
         if hunger <= 0:
             hunger = 0
             print("Pet is full")
+
     if answer == 'play':
         print("You played with the pet")
         hunger = hunger + 10 + (40 * np.random.random())
+
+    if answer == 'pet':
+        print('You petted your pet!')
+        happiness = happiness + 20
+        if happiness > 100:
+            happiness = 100
+        
     
     # Hunger manager:
     hunger = hunger + int(time_passed)

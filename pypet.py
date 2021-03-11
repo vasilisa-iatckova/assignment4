@@ -35,7 +35,7 @@ while (not(quit)):
     if happiness == 0:
         print('You shouldn\'t have gotten a pet if you were never going to make sure it\'s happy. To increase happiness, feed or pet!')
     elif happiness < 20:
-        print('Your pet is getting pretty unhappy.')
+        print('Your pet is pretty unhappy.')
     elif happiness > 80 and hunger < 20:
         print('You\'re doing a pretty good job being a pet parent')
 
@@ -53,7 +53,7 @@ while (not(quit)):
         quit = True
     if answer == 'feed':
         hunger = hunger - 20
-        
+        happiness = happiness + 10
         print("hunger level: ", hunger)
         if hunger <= 0:
             hunger = 0
@@ -66,8 +66,8 @@ while (not(quit)):
     if answer == 'pet':
         print('You petted your pet!')
         happiness = happiness + 20
-        if happiness > 100:
-            happiness = 100
+    
+
         
     
     # Hunger manager:
@@ -80,7 +80,9 @@ while (not(quit)):
     happiness = happiness - int(time_passed)/2
     if happiness <=0:
         happiness = 0
-        happiness = int(happiness)
+    elif happiness > 100:
+        happiness = 100
+    happiness = int(happiness)
     
 
 

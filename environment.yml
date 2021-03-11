@@ -1,0 +1,13 @@
+name: tamagochi
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyterlab
+  - python=3.6
+  - matplotlib
+  - numpy
+  - scipy
+  - ipython
+  - pandas
+prefix: /Users/li/opt/anaconda3/envs/tamagochi
